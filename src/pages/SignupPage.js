@@ -11,6 +11,7 @@ import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import RedirectIfLoggedIn from "../components/RedirectIfLoggedIn";
 
 function SignupPage() {
   //Define hooks
@@ -24,7 +25,7 @@ function SignupPage() {
   //useEffect
   useEffect(() => {
     if (!isLoading && user !== null) Navigate("/dashboard");
-  }, [isLoading]);
+  }, [isLoading, Navigate, user]);
 
   //Define handler functions
   const submitHandler = async () => {
@@ -55,6 +56,7 @@ function SignupPage() {
 
   return (
     <Grid>
+      <RedirectIfLoggedIn />
       <Paper elevation={10} style={paperStyle}>
         <Grid align="center">
           <Avatar style={{ backgroundColor: "#6262d1" }}>
