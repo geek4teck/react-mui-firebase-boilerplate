@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
 import useUser from "./../hooks/useUser";
 
-function Header(props) {
+function Header() {
   //Define Hooks
   const { user, isLoading } = useUser();
   const Navigate = useNavigate();

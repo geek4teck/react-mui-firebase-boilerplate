@@ -12,15 +12,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
 
-function SignupPage(props) {
-  //Define Styles
-  const paperStyle = {
-    width: "50vh",
-    height: 400,
-    margin: "20px auto",
-    padding: "20px",
-  };
-
+function SignupPage() {
   //Define hooks
   const { user, isLoading } = useUser();
   const Navigate = useNavigate();
@@ -34,7 +26,7 @@ function SignupPage(props) {
     if (!isLoading && user !== null) Navigate("/dashboard");
   }, [isLoading]);
 
-  //Define Action handlers
+  //Define handler functions
   const submitHandler = async () => {
     //Data Collection
     const email = emailRef.current.value;
@@ -53,6 +45,14 @@ function SignupPage(props) {
       setError(e.message);
     }
   };
+
+  //Define Styles
+  const paperStyle = {
+    width: "50vh",
+    margin: "20px auto",
+    padding: "20px",
+  };
+
   return (
     <Grid>
       <Paper elevation={10} style={paperStyle}>
