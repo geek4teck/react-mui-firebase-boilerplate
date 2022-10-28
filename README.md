@@ -2,9 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Replace src/includes/firebase.js
+## Rename .env.template to .env file
 
-Goto [https://console.firebase.google.com/] and create a new app. This will provide you with configuration which can be replaced in your src/includes/firebase.js file.
+## Replace constants in .env file
+
+Goto [https://console.firebase.google.com/] and create a new app. This will provide you with configuration which can be replaced in your .env file.
 
 
 ## Available Scripts
