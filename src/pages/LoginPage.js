@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
+import RedirectIfLoggedIn from "../components/RedirectIfLoggedIn";
 function LoginPage() {
   //Define Hooks
   const Navigate = useNavigate();
@@ -39,6 +40,7 @@ function LoginPage() {
   const avatarStyle = { backgroundColor: "#6262d1" };
   return (
     <div>
+      <RedirectIfLoggedIn />
       <Grid>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">
