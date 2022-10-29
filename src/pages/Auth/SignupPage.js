@@ -49,9 +49,10 @@ function SignupPage() {
 
   //Define Styles
   const paperStyle = {
+    padding: "40px",
     width: "50vh",
     margin: "20px auto",
-    padding: "20px",
+    maxWidth: 350,
   };
 
   return (

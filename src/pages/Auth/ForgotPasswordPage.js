@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import {
   Avatar,
   Button,
@@ -9,22 +9,20 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import LockOpenIcon from "@mui/icons-material/LockOpen";
+import KeyIcon from "@mui/icons-material/Key";
 import RedirectIfLoggedIn from "./../../components/RedirectIfLoggedIn";
-function LoginPage() {
+function ForgotPasswordPage() {
   //Define Hooks
   const Navigate = useNavigate();
   const emailRef = useRef();
-  const passwordRef = useRef();
   const [error, setError] = useState(null);
 
   //Define Handler Functions
   const formSubmitHandler = async () => {
     const email = emailRef.current.value;
-    const password = passwordRef.current.value;
     try {
-      await signInWithEmailAndPassword(getAuth(), email, password);
-      Navigate("/dashboard");
+      await sendPasswordResetEmail(getAuth(), email);
+      Navigate("/");
     } catch (e) {
       setError(e.message);
     }
@@ -46,9 +44,9 @@ function LoginPage() {
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
-              <LockOpenIcon />
+              <KeyIcon />
             </Avatar>
-            <h4>Login</h4>
+            <h4>Forgot Password</h4>
           </Grid>
           <Grid align="center">
             {error ? (
@@ -63,14 +61,7 @@ function LoginPage() {
               style={{ margin: "8px 0" }}
               inputRef={emailRef}
             ></TextField>
-            <TextField
-              label="Password"
-              placeholder="Enter Password"
-              type="password"
-              fullWidth
-              style={{ margin: "8px 0" }}
-              inputRef={passwordRef}
-            ></TextField>
+
             <Button
               type="submit"
               color="primary"
@@ -78,13 +69,9 @@ function LoginPage() {
               style={{ margin: "8px 0" }}
               onClick={formSubmitHandler}
             >
-              Login
+              Send Email
             </Button>
             <br />
-            <div style={{ float: "right" }}>
-              <Link to="/forgot-password">Forgot Password?</Link> | New User?{" "}
-              <Link to="/signup">Register</Link>
-            </div>
           </Grid>
         </Paper>
       </Grid>
@@ -92,4 +79,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default ForgotPasswordPage;
