@@ -10,8 +10,8 @@ import React, { useEffect, useRef, useState } from "react";
 import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import useUser from "../hooks/useUser";
-import RedirectIfLoggedIn from "../components/RedirectIfLoggedIn";
+import useUser from "../../hooks/useUser";
+import RedirectIfLoggedIn from "./../../components/RedirectIfLoggedIn";
 
 function SignupPage() {
   //Define hooks

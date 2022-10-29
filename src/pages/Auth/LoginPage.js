@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
-import RedirectIfLoggedIn from "../components/RedirectIfLoggedIn";
+import RedirectIfLoggedIn from "./../../components/RedirectIfLoggedIn";
 function LoginPage() {
   //Define Hooks
   const Navigate = useNavigate();

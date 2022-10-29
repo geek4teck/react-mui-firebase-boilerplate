@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/Auth/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/Error/NotFoundPage";
 import "./includes/firebase";
-import SignupPage from "./pages/SignupPage";
+import SignupPage from "./pages/Auth/SignupPage";
 import Header from "./includes/Header";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
