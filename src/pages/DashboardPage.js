@@ -1,10 +1,13 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import Authenticate from "../components/Authenticate";
 
 function DashboardPage() {
   return (
-   
-   <Typography>Hello World</Typography>
+    <>
+      <Authenticate />
+      <Typography>Hello World</Typography>
+    </>
   );
 }
 
