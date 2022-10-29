@@ -21,7 +21,6 @@ function Header() {
   }, [isLoading]);
 
   if (loading) return null;
-  console.log(user);
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
